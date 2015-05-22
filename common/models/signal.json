@@ -1,0 +1,37 @@
+{
+  "name": "signal",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "properties": {
+    "right_angle": {
+      "type": "number",
+      "required": true
+    },
+    "left_angle": {
+      "type": "number",
+      "required": true
+    },
+    "sender_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "devices": {
+      "type": "belongsTo",
+      "model": "device",
+      "foreignKey": "sender_id"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": []
+}

@@ -1,0 +1,33 @@
+{
+  "name": "request",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "properties": {
+    "location": {
+      "type": "geopoint"
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "create_time": {
+      "type": "date"
+    },
+    "status": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": []
+}
